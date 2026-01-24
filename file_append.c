@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main() 
+{
+    FILE *fp;
+    int roll;
+    char name[20];
+    fp = fopen("student.txt", "a");
+    if (fp == NULL) 
+    {
+        printf("File not opened\n");
+        return 0;
+    }
+    printf("Enter roll and name: ");
+    scanf("%d %s", &roll, name);
+    fprintf(fp, "\n%d %s", roll, name);
+    fclose(fp);
+    printf("Data appended successfully\n");
+    return 0;
+}
